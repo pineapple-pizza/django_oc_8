@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     def add_products(self):
         
-        url = 'https://fr-en.openfoodfacts.org/category/sauces.json'
+        url = 'https://fr-en.openfoodfacts.org/category/desserts.json'
         response = requests.get(url)
         products_data = response.json()
         products = products_data['products']
