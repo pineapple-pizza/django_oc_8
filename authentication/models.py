@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
 from rest_framework_simplejwt.tokens import RefreshToken
+import json
 
 # Create your models here.
 
@@ -45,7 +46,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     def tokens(self):
         refresh = RefreshToken.for_user(self)
-        return {
-            'refresh': str(refresh),
-            'access': str(refresh.access_token)
+        
+        res_token = {
+            "refresh": str(refresh),
+            "access": str(refresh.access_token)
         }
+        
+        return json.dumps(res_token)
