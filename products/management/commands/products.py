@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     def add_products(self):
         
-        url = 'https://fr-en.openfoodfacts.org/category/biscuits.json'
+        url = 'https://fr-en.openfoodfacts.org/category/french_cheese.json'
         response = requests.get(url)
         products_data = response.json()
         products = products_data['products']
@@ -33,7 +33,7 @@ class Command(BaseCommand):
             prod_name = products[i]['product_name']
             print('prod name: ', prod_name)
             
-            data = Product(name=prod_name, url=prod_url, nutrition_grade=nutriscore, category="biscuits", date=timezone.now())
+            data = Product(name=prod_name, url=prod_url, nutrition_grade=nutriscore, category="french_cheese", date=timezone.now())
             data.save()
         return products
         
