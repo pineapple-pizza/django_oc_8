@@ -33,7 +33,7 @@ class Command(BaseCommand):
             prod_name = products[i]['product_name']
             print('prod name: ', prod_name)
             
-            data = Product(name=prod_name, url=prod_url, nutrition_grade=nutriscore, category="sauces", date=timezone.now())
+            data = Product(name=prod_name, url=prod_url, nutrition_grade=nutriscore, category="desserts", date=timezone.now())
             data.save()
         return products
         
