@@ -11,7 +11,7 @@ class Product(models.Model):
         ('seafood', 'seafood'),
         ('biscuits', 'biscuits'),
         ('french_cheese', 'french_cheese'),
-        ('pizza', 'pizza')
+        ('pizza', 'pizza'),
     ]
     
     category = models.CharField(choices=CATEGORY_OPTIONS, max_length=255)
@@ -19,5 +19,5 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     url = models.TextField()
     nutrition_grade = models.CharField(max_length=255)
-    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, default='')
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
     date = models.DateField(auto_created=True)
