@@ -19,6 +19,6 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     url = models.TextField()
     nutrition_grade = models.CharField(max_length=255)
-    substitut = models.CharField(max_length=255, default="", null=True)
+    substitut = models.CharField(max_length=255, default="null")
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True)
     date = models.DateField(auto_created=True)
