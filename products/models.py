@@ -22,3 +22,4 @@ class Product(models.Model):
     substitut = models.CharField(max_length=255, null=True)
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True)
     date = models.DateField(auto_created=True)
+    favorite = models.CharField(max_length=50, default=False)
