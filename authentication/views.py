@@ -30,9 +30,9 @@ class RegisterView(generics.GenericAPIView):
         
         token = RefreshToken.for_user(user).access_token
         
-        current_site = "https://pur-beurre-front.herokuapp.com/"
+        current_site = "pur-beurre-front.herokuapp.com/email-verify"
         
-        relativeLink = reverse('email-verify')
+        # relativeLink = reverse('email-verify')
         
         absurl = 'http://'+current_site+relativeLink+'/'+str(token)
         
