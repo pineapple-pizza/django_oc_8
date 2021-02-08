@@ -30,11 +30,11 @@ class RegisterView(generics.GenericAPIView):
         
         token = RefreshToken.for_user(user).access_token
         
-        current_site = get_current_site(request).domain
+        current_site = "https://pur-beurre-front.herokuapp.com/"
         
         relativeLink = reverse('email-verify')
         
-        absurl = 'http://'+current_site+relativeLink+'?token='+str(token)
+        absurl = 'http://'+current_site+relativeLink+'/'+str(token)
         
         email_body = 'Salut '+user.username+'\nutilise le lien ci-dessous pour vérifier ton adresse email: \n'+absurl
         

@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'authentication',
     'rest_framework',
+    'rest_framework.authtoken',
     'drf_yasg',
     'products'
 ]
