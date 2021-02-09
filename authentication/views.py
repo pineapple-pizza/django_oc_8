@@ -30,7 +30,7 @@ class RegisterView(generics.GenericAPIView):
         
         token = RefreshToken.for_user(user).access_token
         
-        current_site = "get_current_site(request).domain"
+        current_site = get_current_site(request).domain
         
         relativeLink = reverse('email-verify')
         
