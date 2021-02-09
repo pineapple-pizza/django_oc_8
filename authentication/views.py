@@ -30,11 +30,11 @@ class RegisterView(generics.GenericAPIView):
         
         token = RefreshToken.for_user(user).access_token
         
-        current_site = "pur-beurre-front.herokuapp.com/email-verify"
+        current_site = "get_current_site(request).domain"
         
-        # relativeLink = reverse('email-verify')
+        relativeLink = reverse('email-verify')
         
-        absurl = 'http://'+current_site+'?token='+str(token)
+        absurl = 'http://'+current_site+relativeLink+'?token='+str(token)
         
         email_body = 'Salut '+user.username+'\nutilise le lien ci-dessous pour vérifier ton adresse email: \n'+absurl
         
@@ -59,7 +59,8 @@ class VerifyEmail(views.APIView):
             if not user.is_verified:
                 user.is_verified = True
                 user.save()
-            return Response({'email': 'successfully activated'}, status=status.HTTP_200_OK)
+            # return Response({'email': 'successfully activated'}, status=status.HTTP_200_OK)
+            return redirect('https://pur-beurre-front.herokuapp.com/')
         except jwt.ExpiredSignatureError as identifier:
             return Response({'error': 'activation link expired'}, status=status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError as identifier:
