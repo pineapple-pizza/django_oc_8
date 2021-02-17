@@ -35,7 +35,7 @@ class Product(models.Model):
     favorite = models.BooleanField(default=False)
     
 class MyFavorites(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User.username, on_delete=models.CASCADE)
     sub_product = models.ForeignKey(to=Product, on_delete=models.CASCADE, null=True, related_name=('substitut'))
     old_product = models.ForeignKey(to=Product, on_delete=models.CASCADE, null=True, related_name=('old_product'))
     
