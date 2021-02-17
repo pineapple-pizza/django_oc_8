@@ -79,8 +79,8 @@ class FavoritesAPIView(ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticated,)
     
     def perform_create(self, serializer):
-        return serializer.save()
+        return serializer.save(user=self.request.user)
     
     def get_queryset(self):
         # return self.queryset.filter(owner = self.request.user)
-        return self.queryset.filter()
+        return self.queryset.filter(user=self.request.user)
