@@ -39,7 +39,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['pur-beurre-front.herokuapp.com/', 'oc-django-api.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['pur-beurre-front.herokuapp.com/', 'django-api-2.herokuapp.com', '127.0.0.1']
 
 AUTH_USER_MODEL = 'authentication.User'
 
