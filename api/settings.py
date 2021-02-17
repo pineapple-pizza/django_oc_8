@@ -208,10 +208,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 EMAIL_USE_TLS = True
-EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST='email-smtp.eu-west-2.amazonaws.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER='oc.projet.django@gmail.com'
-EMAIL_HOST_PASSWORD='mojo2couscous'
+EMAIL_HOST_USER='AKIA4LHCVWRUBXZRIWIM'
+EMAIL_HOST_PASSWORD='BIsF7HHEbATaRN6xguH8W5Wr6APjC8eekE2sMoMMvGEk'
 DEFAULT_FROM_EMAIL='oc.projet.django@gmail.com'
 
 
