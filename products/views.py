@@ -75,13 +75,14 @@ class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
     
 class FavoritesAPIView(ListCreateAPIView):
     serializer_class = FavoritesSerializer
-    queryset = MyFavorites.objects.all()
+    queryset = MyFavorites.objects.filter(sub_product)
     permission_classes = (permissions.IsAuthenticated,)
     
     def perform_create(self, serializer):
         return serializer.save(user=self.request.user)
     
     def get_queryset(self):
+        products = Product.objects.all()
         # return self.queryset.filter(owner = self.request.user)
         # return self.queryset.filter(user=self.request.user)
-        return self.queryset.filter(sub_product__name)
+        return self.products.filter(name = sub_product)
