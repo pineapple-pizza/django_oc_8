@@ -50,7 +50,7 @@ class FavoritesAPIView(ListCreateAPIView):
         # products = Product.objects.all()
         # return self.queryset.filter(user = self.request.user)
         
-        obj = queryset.filter(pk=1)
+        obj = self.queryset.filter(pk=1)
         # # obj.substitut_set.all()
         obj.substitut.all()
         return obj
