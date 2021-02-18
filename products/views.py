@@ -85,9 +85,14 @@ class FavoritesAPIView(ListCreateAPIView):
         # products = Product.objects.all()
         # return self.queryset.filter(owner = self.request.user)
         
-        obj = MyFavorites.objects.get(id=1)
+        # obj = MyFavorites.objects.get(id=1)
+        # # obj.substitut_set.all()
         # obj.substitut_set.all()
-        obj.substitut_set.all()
-        return obj
+        # return obj
         # return self.queryset.filter(user=self.request.user)
         # return self.products.filter(name = sub_product)
+        
+        fav_ids = Product.objects.filter(name='Pizza royale')
+        fav = MyFavorites.objects.filter(id__in=fav_ids)
+        
+        return fav
