@@ -1,38 +1,3 @@
-# from django.shortcuts import render
-# from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-# from .serializers import ProductSerializer
-# from .models import Product
-# from rest_framework import permissions
-# from .permissions import IsOwner
-# from rest_framework.filters import SearchFilter, OrderingFilter
-
-# # Create your views here.
-
-# class ProductListAPIView(ListCreateAPIView):
-#     serializer_class = ProductSerializer
-#     queryset = Product.objects.all()
-#     permission_classes = (permissions.IsAuthenticated,)
-#     filter_backends = (SearchFilter, OrderingFilter)
-#     search_fields = ('name', 'category')
-    
-#     def perform_create(self, serializer):
-#         return serializer.save(owner=self.request.user)
-    
-#     def get_queryset(self):
-#         return self.queryset.filter(owner = self.request.user)
-    
-# class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
-#     serializer_class = ProductSerializer
-#     queryset = Product.objects.all()
-#     permission_classes = (permissions.IsAuthenticated, IsOwner,)
-#     lookup_field = 'id'
-    
-#     def perform_create(self, serializer):
-#         return serializer.save(owner=self.request.user)
-    
-#     def get_queryset(self):
-#         return self.queryset.filter(owner = self.request.user)
-
 from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .serializers import ProductSerializer, FavoritesSerializer
@@ -83,7 +48,7 @@ class FavoritesAPIView(ListCreateAPIView):
     
     def get_queryset(self):
         # products = Product.objects.all()
-        # return self.queryset.filter(owner = self.request.user)
+        return self.queryset.filter(user = self.request.user)
         
         # obj = MyFavorites.objects.get(id=1)
         # # obj.substitut_set.all()
@@ -92,7 +57,7 @@ class FavoritesAPIView(ListCreateAPIView):
         # return self.queryset.filter(user=self.request.user)
         # return self.products.filter(name = sub_product)
         
-        fav_ids = Product.objects.filter(name='Pizza royale')
-        fav = MyFavorites.objects.filter(id__in=fav_ids)
+        # fav_ids = Product.objects.filter(name='Pizza royale')
+        # fav = MyFavorites.objects.filter(id__in=fav_ids)
         
-        return fav
+        # return fav
