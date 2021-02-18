@@ -84,4 +84,4 @@ class FavoritesAPIView(ListCreateAPIView):
     def get_queryset(self):
         # return self.queryset.filter(owner = self.request.user)
         # return self.queryset.filter(user=self.request.user)
-        return self.queryset.filter(sub_product_id__name__user=self.request.user)
+        return self.queryset.filter(sub_product_id__name)
