@@ -37,7 +37,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['pur-beurre-front.herokuapp.com/', 'django-api-2.herokuapp.com', '127.0.0.1']
 
