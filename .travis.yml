@@ -6,3 +6,12 @@ install:
   - pip install -r requirements.txt
   - pip install .
 script: python run manage.py test
+# after_success:
+# after_failure:
+# after_script:
+# deploy:
+#   provider: pages 
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   on:
+#     branch: master
