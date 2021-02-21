@@ -5,6 +5,8 @@ env:
   - SECRET_KEY = 'test'
 services:
   - postgresql
+before_install:
+  - python --version
 install:
   - pipenv install
 script: python manage.py test
