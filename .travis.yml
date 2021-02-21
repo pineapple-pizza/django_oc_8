@@ -1,19 +1,15 @@
 language: python
 python:
-  - "3.9.1"
+- 3.9.1
 env:
-  - SECRET_KEY = 'test'
+  matrix:
+  - SECRET_KEY='test'
+  global:
+    secure: JGrq5vcIhZQuq5lpqtnmB8YmPTGQyffWrtxQfyHuBiEuzjM7RdDhSZy7NXsQHkdQ1h8INzy17K6LCrYw/xRefu8oDNByLDq5oQpm/NPwySGkettjcqf5pk4q7QtCVakcUHdk/djvXOFMNVF/5JmD6hA3WHodzvTpS5ZdsHhzuQv40bllp2pZkN786MYOWTZlQfyxX3jKOH0fVyqV7JnLf+Oku17y26HlR4XiXmsPEJVnZkwJ/bFN/rjk3GB/lKb7RhNQ4ilVTiWiDMwSqkKrRn8do4ECEEnvLGWWkTRbQ4ChE0SNDP3xRnMJpsOKkiBpyO4Zf/tLVMgy0tpTmKfyGqMNrvmB5uwgVEzhwriWi68Sp7E9ITlnjEGXTVmNe/iUVZLCFEEvsZa6LQupNbadLq4A7+FEZ6YSeaeH1TX+TKjuqUR0RT4L9a9I4RIaAfFrEjVoI25N8dRHW5NXyhKJUkUfk6JbfnTGY/A+zg/Mox6jR2ZRJUWpY3fizTdutv9tYBW2dkVhLcOIMz4gZlW3WjE+WYmJBjItahrhZwsgwoa9+EtSq98fjRgeOspiY6O7eY8ezeMktWwRSVKsiOsDvWp/0N8vmwHoBzHewVNvoGhkJzUERsDzX4/ttfHqByBpIv0FJM8kk3va7cAxZuR3rObN7kZZ0MImZhA5BbRPbjo=
 services:
-  - postgresql
+- postgresql
+before_script:
+- psql -c "CREATE DATABASE nutella_bdd;" -U postgres
 install:
-  - pipenv install
+- pipenv install
 script: python manage.py test
-# after_success:
-# after_failure:
-# after_script:
-# deploy:
-#   provider: pages 
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   on:
-#     branch: master
