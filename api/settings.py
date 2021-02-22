@@ -199,7 +199,7 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = (
 #     os.path.join(PROJECT_ROOT, 'static'),
 # )
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.mailgun.org'
