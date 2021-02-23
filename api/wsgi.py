@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 
 import newrelic.agent
 
-newrelic.agent.initialize('api.newrelic.ini')
+newrelic.agent.initialize('/home/anouchik/django_api/newrelic.ini')
 
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "api.settings")
