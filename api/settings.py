@@ -52,7 +52,7 @@ SECRET_KEY = '$SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['pur-beurre-front.herokuapp.com/', 'django-api-2.herokuapp.com', '127.0.0.1', '143.198.18.112']
+ALLOWED_HOSTS = ['pur-beurre-front.herokuapp.com/', 'django-api-2.herokuapp.com', '127.0.0.1', '143.198.18.112', 'django-api-oc.fun', 'www.django-api-oc.fun']
 
 AUTH_USER_MODEL = 'authentication.User'
 
