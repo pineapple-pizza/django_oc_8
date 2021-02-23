@@ -20,6 +20,19 @@ from datetime import timedelta
 import dj_database_url
 import dotenv
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://3b4589661bcd4186a0d5e37562f8808b@o529554.ingest.sentry.io/5648080",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
+
 # import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +50,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '$SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['pur-beurre-front.herokuapp.com/', 'django-api-2.herokuapp.com', '127.0.0.1', '143.198.18.112']
 

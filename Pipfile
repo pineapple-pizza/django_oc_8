@@ -17,6 +17,7 @@ dj-database-url = "*"
 python-dotenv = "*"
 whitenoise = "*"
 django-cors-headers = "*"
+sentry-sdk = "*"
 
 [dev-packages]
 black = "*"
