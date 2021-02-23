@@ -18,6 +18,7 @@ python-dotenv = "*"
 whitenoise = "*"
 django-cors-headers = "*"
 sentry-sdk = "*"
+newrelic = "*"
 
 [dev-packages]
 black = "*"
