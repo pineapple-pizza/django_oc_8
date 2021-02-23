@@ -70,7 +70,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'drf_yasg',
-    'products'
+    'products',
+    'django_crontab'
 ]
 
 SWAGGER_SETTINGS = {
@@ -232,3 +233,7 @@ DEFAULT_FROM_EMAIL=config('EMAIL_DEFAULT')
 
 # options = DATABASES['default'].get('OPTIONS', {})
 # options.pop('sslmode', None)
+
+CRONJOBS = [
+    ('5 4 * * sun', 'python manage.py products')
+]
